@@ -17,8 +17,9 @@ public class HealthChecker {
     private final EurekaClient eurekaClient;
     private final HealthStatusRepository healthStatusRepository;
 
-    @Scheduled(fixedDelay = 30000)
+    @Scheduled(fixedDelay = 1000)
     void checkHealth() {
+        log.info("Checking health");
         Applications applications = eurekaClient.getApplications();
         healthStatusRepository.save(HealthStatus.builder()
                 .status("UP")

@@ -22,6 +22,6 @@ public class InfoDetailsContributor implements InfoContributor {
         if (!statuses.isEmpty()) {
             userDetails.put("lastUpTime", statuses.get(0).getLastHealthyTime());
         }
-        builder.withDetail("users", userDetails);
+        builder.withDetail("health", userDetails);
     }
 }
